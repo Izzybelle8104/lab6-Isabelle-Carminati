@@ -9,6 +9,16 @@ def encode_function(encode_password):
         new_encoded_password += new_char
     return new_encoded_password
 
+def decode_function(decode_password): # written by Izzy Lowers
+    new_decoded_password = ''
+    for char in decode_password:
+        char = int(char)
+        new_char = char - 3
+        new_char = str(new_char)
+        new_decoded_password += new_char
+    return new_decoded_password
+
+
 def main():
     # The password encoder should take in an 8-digit password in string format containing only integers.
     # After passing the password into the encoder, the encoder stores the encoded password to a new
@@ -28,6 +38,8 @@ def main():
             print()
             stored_encode = encode_function(user_password)
         if menu_selection == 2:
+            stored_decode = decode_function(user_password)
+            print(f'The encoded password is {stored_encode}, and the original password is {stored_decode}')
 
         if menu_selection == 3:
             break
